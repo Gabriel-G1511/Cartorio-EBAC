@@ -6,6 +6,11 @@
 
 int registro()//função responsavel por cadastrar os usuarios no sistema
 {
+		int opcao=0;
+	int laco=1;
+	
+	for(laco=1;laco=1;)
+	{
 	setlocale(LC_ALL,"portuguese");
 	
 	//inicio da criação de variaveis/string
@@ -62,9 +67,35 @@ int registro()//função responsavel por cadastrar os usuarios no sistema
 	fprintf(file,cargo);//adicionando valor de cargo no arquivo
 	fclose(file);//fechando arquivo
 	system("pause");//parando a tela final
-    return 0;//retornar a inicial
 	
+	system("cls"); //cls é para limpar a tela após a resposta do usuario
 	
+	printf("\t1 Adicionar outro usuario \n\n");
+	printf("\t2 Voltar ao menu inicial \n\n");
+	
+	printf("digite a opção desejada:");
+	
+		scanf("%d",&opcao); //armazenamento da escolha do usuario
+
+	system("cls"); //cls é para limpar a tela após a resposta do usuario
+	
+    switch(opcao){ //inicio seleção do menu
+    case 1://caso opção 1
+    registro();//chamar int registro
+    break;//quebra de código
+    
+    case 2: //caso opção 2
+    return -2; //voltar ao menu inicial
+    break;//quebra de código
+    
+    default://se opção for diferente das demais
+	printf("\t Essa opção não esta diponivel\n\n");//notificando usuario
+	system("pause");//parar tela
+	break; //quebra de código
+	//final da seleção
+	
+}
+}
 }
 
 int consulta()//função responvelpor consultar os itens cadastrados
@@ -170,7 +201,7 @@ int main ()
 	break; //quebra de código
 	//final da seleção
 	
-	
 }
 }
 }
+
